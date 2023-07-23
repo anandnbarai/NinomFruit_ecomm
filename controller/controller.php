@@ -36,7 +36,7 @@ class controller extends model
                     $mail->SMTPAuth = true; //?Enable SMTP authentication
 
                     $mail->Username = 'ab20892@gmail.com'; //*SMTP username, It can be any mail id
-                    $mail->Password = ' '; //*SMTP password
+                    $mail->Password = 'lsjjxbimqjghmioh '; //*SMTP password
 
                     $mail->SMTPSecure = "TLS"; //?Enable implicit TLS encryption
                     $mail->Port = 587;
@@ -124,7 +124,7 @@ class controller extends model
 
 
                 $mail->Username = 'ab20892@gmail.com'; //*SMTP username, It can be any mail id
-                $mail->Password = ' '; //*SMTP password
+                $mail->Password = 'lsjjxbimqjghmioh '; //*SMTP password
 
 
                 $mail->SMTPSecure = "TLS"; //?Enable implicit TLS encryption
