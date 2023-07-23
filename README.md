@@ -1,2 +1,2 @@
 # NinomFruit_ecomm
-E-Commerce Website using MVC concept and PHP in backend, MySQL in database HTML and Bootstrap in frontend
+E-Commerce Website using PHP MVC concept, MySQL in database HTML and Bootstrap in frontend
