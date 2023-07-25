@@ -17,25 +17,25 @@
                         <div class="contact_form-container">
                             <div>
                                 <div>
-                                    Name : <input type="text" placeholder="Full Name" name="name" />
+                                    Name : <input type="text" placeholder="Full Name" name="name" required/>
                                 </div>
                                 <div>
-                                    Email : <input type="email" placeholder="Email" name="email" />
+                                    Email : <input type="email" placeholder="Email" name="email" required/>
                                 </div>
                                 <div>
-                                    Phone Number : <input type="text" placeholder="Phone Number" name="mobile" />
+                                    Phone Number : <input type="text" placeholder="Phone Number" name="mobile" required/>
                                 </div>
                                 <div>
                                     Address : <input type="text" class="message_input" placeholder="Enter Your Address"
-                                        name="address" />
+                                        name="address" required/>
                                 </div>
                                 <div>
-                                    Password : <input type="password" placeholder="Enter Your Password"
-                                        name="password" />
+                                    Password : <input type="password" placeholder="Enter Your Password" minlength="6"
+                                        name="password" required/>
                                 </div>
                                 <div>
                                     Confirm Password : <input type="password" placeholder="Enter Your Password Again"
-                                        name="c_password" />
+                                        name="c_password" minlength="6" required/>
                                 </div>
                                 <div>
                                     <button type="submit" class="text-dark" name="register">
