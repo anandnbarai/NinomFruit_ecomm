@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 class model
 {
     public $connection = "";
@@ -40,6 +42,7 @@ class model
         $exe = mysqli_query($this->connection, $select);
         $fetch = mysqli_fetch_array($exe);
         $num_rows = mysqli_num_rows($exe);
+
         if ($num_rows == 1) {
             $_SESSION["user_id"] = $fetch["user_id"];
             $_SESSION["email"] = $fetch["email"];
@@ -57,6 +60,53 @@ class model
         unset($_SESSION["name"]);
         session_destroy();
         return true;
+    }
+
+    //! function for Change Password
+    public function chngepassword($table, $column, $opassword, $npassword, $cpassword, $id)
+    {
+        // select old  password 
+        $id = $_SESSION["user_id"];
+        $select = "select password from $table where $column='$id'";
+        $exe = mysqli_query($this->connection, $select);
+        $fetch = mysqli_fetch_array($exe);
+        $password = $fetch["password"];
+
+        if ($password == $opassword && $npassword == $cpassword) {
+            $changepassword = "update $table set password='$npassword' where $column='$id'";
+            $exe = mysqli_query($this->connection, $changepassword);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    //! function for account delete
+    public function deleteaccount($table, $id)
+    {
+        //key convert array into value or string
+        $column = array_keys($id);
+        $column1 = implode(",", $column);
+        //values convert array into value or string
+        $value = array_values($id);
+        $value1 = implode("','", $value);
+
+        $delete = "delete from $table where $column1='$value1'";
+        $exe = mysqli_query($this->connection, $delete);
+        return $exe;
+
+    }
+
+    //! functiion for select data from database
+    public function selectalldata($table)
+    {
+        $select = "select * from $table";
+        $exe = mysqli_query($this->connection, $select);
+        while ($fetch = mysqli_fetch_array($exe)) {
+            $arr[] = $fetch;
+        }
+        return $arr;
     }
 
 }
