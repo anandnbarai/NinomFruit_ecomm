@@ -1,5 +1,7 @@
 <?php
 $mainurl = "http://localhost/php-data/my_work/TI/Ninom%20Fruit/admin/";
+$baseurl = "http://localhost/php-data/my_work/TI/Ninom%20Fruit/admin/assets/";
+
 ?>
 
 <!DOCTYPE html>
@@ -13,8 +15,7 @@ $mainurl = "http://localhost/php-data/my_work/TI/Ninom%20Fruit/admin/";
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <link rel="icon" type="image/x-icon"
-        href="https://png.pngtree.com/png-vector/20210729/ourmid/pngtree-pin-letter-c-logo-icon-design-vector-image-png-image_3750106.jpg">
+    <link rel="icon" href="<?php echo $baseurl; ?>img/shop-img.jpg" type="image/jpg" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -23,16 +24,16 @@ $mainurl = "http://localhost/php-data/my_work/TI/Ninom%20Fruit/admin/";
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="<?php echo $baseurl; ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $baseurl; ?>vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="<?php echo $baseurl; ?>vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="<?php echo $baseurl; ?>vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="<?php echo $baseurl; ?>vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="<?php echo $baseurl; ?>vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="<?php echo $baseurl; ?>vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="<?php echo $baseurl; ?>css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -113,17 +114,17 @@ $mainurl = "http://localhost/php-data/my_work/TI/Ninom%20Fruit/admin/";
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/chart.js/chart.umd.js"></script>
-    <script src="assets/vendor/echarts/echarts.min.js"></script>
-    <script src="assets/vendor/quill/quill.min.js"></script>
-    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="<?php echo $baseurl; ?>vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="<?php echo $baseurl; ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo $baseurl; ?>vendor/chart.js/chart.umd.js"></script>
+    <script src="<?php echo $baseurl; ?>vendor/echarts/echarts.min.js"></script>
+    <script src="<?php echo $baseurl; ?>vendor/quill/quill.min.js"></script>
+    <script src="<?php echo $baseurl; ?>vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="<?php echo $baseurl; ?>vendor/tinymce/tinymce.min.js"></script>
+    <script src="<?php echo $baseurl; ?>vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="<?php echo $baseurl; ?>js/main.js"></script>
 
 </body>
 

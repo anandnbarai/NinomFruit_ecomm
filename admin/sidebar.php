@@ -13,32 +13,17 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-journal-text"></i><span>Add Fruit Categorys</span><i class="bi bi-chevron-down ms-auto"></i>
+                <i class="bi bi-journal-text"></i><span>Our Fruit Section</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="forms-elements.html">
-                        <i class="bi bi-circle"></i><span>Berries</span>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Add Fruit Details</span>
                     </a>
                 </li>
                 <li>
-                    <a href="forms-layouts.html">
-                        <i class="bi bi-circle"></i><span>Pits</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="forms-editors.html">
-                        <i class="bi bi-circle"></i><span>Core</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="forms-validation.html">
-                        <i class="bi bi-circle"></i><span>Citrus Fruits</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="forms-validation.html">
-                        <i class="bi bi-circle"></i><span>Tropical Fruits</span>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Manage Fruit Details</span>
                     </a>
                 </li>
             </ul>
@@ -46,18 +31,18 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-layout-text-window-reverse"></i><span>Suppliers</span><i
+                <i class="bi bi-layout-text-window-reverse"></i><span>About Section</span><i
                     class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="tables-general.html">
-                        <i class="bi bi-circle"></i><span>ABC Corp</span>
+                    <a href="<?php echo $mainurl; ?>addabout">
+                        <i class="bi bi-circle"></i><span>Add About Section</span>
                     </a>
                 </li>
                 <li>
-                    <a href="tables-data.html">
-                        <i class="bi bi-circle"></i><span>XYZ Pvt Ltd</span>
+                    <a href="<?php echo $mainurl; ?>manageabout">
+                        <i class="bi bi-circle"></i><span>Manage About Section</span>
                     </a>
                 </li>
             </ul>
