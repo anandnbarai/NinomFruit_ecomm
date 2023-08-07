@@ -36,7 +36,7 @@ class controller extends model
                     $mail->SMTPAuth = true; //?Enable SMTP authentication
 
                     $mail->Username = 'ab20892@gmail.com'; //*SMTP username, It can be any mail id
-                    $mail->Password = ' '; //*SMTP password
+                    $mail->Password = 'lsjjxbimqjghmioh '; //*SMTP password
 
                     $mail->SMTPSecure = "TLS"; //?Enable implicit TLS encryption
                     $mail->Port = 587;
@@ -80,6 +80,7 @@ class controller extends model
 
         }
 
+
         //!User login
         if (isset($_POST["login"])) {
 
@@ -90,7 +91,7 @@ class controller extends model
             if ($chk) {
                 echo "<script>
                         alert('You are Logged in Successfully.')
-                        window.location='./';
+                        window.location='myprofile';
                     </script>";
 
             } else {
@@ -100,8 +101,11 @@ class controller extends model
                     </script>";
             }
         }
+
+
+        //! Contact Page - mail sending when click on send button
         try {
-            //* Contact Page - mail sending when click on send button
+
             if (isset($_POST["click"])) {
 
                 require_once("PHPMailer.php");
@@ -124,7 +128,7 @@ class controller extends model
 
 
                 $mail->Username = 'ab20892@gmail.com'; //*SMTP username, It can be any mail id
-                $mail->Password = ' '; //*SMTP password
+                $mail->Password = 'lsjjxbimqjghmioh '; //*SMTP password
 
 
                 $mail->SMTPSecure = "TLS"; //?Enable implicit TLS encryption
@@ -153,19 +157,65 @@ class controller extends model
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
 
-        //! Logout
 
-        if (isset($_GET["logout"])) {
-            $chk = $this->logout();
+        //!Change Password
+        if (isset($_POST["changepassword"])) {
+            $id = $_SESSION["user_id"];
+            $opassword = base64_encode($_POST["oldpassword"]);
+            $npassword = base64_encode($_POST["newpassword"]);
+            $cpassword = base64_encode($_POST["confirmpassword"]);
+
+            $chk = $this->chngepassword('user', 'user_id', $opassword, $npassword, $cpassword, $id);
+
             if ($chk) {
+                unset($_SESSION["user_id"]);
+                unset($_SESSION["email"]);
+                unset($_SESSION["name"]);
+                session_destroy();
+
+                echo "<script>alert('Your Password Changed successfully')
+                        window.location='login';
+                        </script>";
+            } else {
                 echo "<script>
-                        alert('You are Logged Out Successfully.')
-                        window.location='/';
+                        alert('Your Password , Old Password and Confirmed Password does not matched, Try Again')
+                        window.location='changepassword';
                     </script>";
             }
         }
 
 
+        //! Logout
+        if (isset($_GET["logout"])) {
+            $chk = $this->logout();
+            if ($chk) {
+                echo "<script>
+                        alert('You are Logged Out Successfully.')
+                        window.location='./';
+                    </script>";
+            }
+        }
+
+        //! Delete acoount
+        if (isset($_GET["deleteaccount"])) {
+
+            $delete_id = $_GET["deleteaccount"];
+            $id = array("user_id" => $delete_id);
+            $chk = $this->deleteaccount('user', $id);
+            if ($chk) {
+                unset($_SESSION["user_id"]);
+                unset($_SESSION["email"]);
+                unset($_SESSION["name"]);
+                session_destroy();
+                echo "<script>
+                        alert('Your Profile successfully deleted')
+                        window.location='register';
+                    </script>";
+            }
+        }
+
+        //! fetch state in register form dynamic from cycle_state table
+        $showdata = $this->selectalldata('user');
 
         //! Routing
         if (isset($_SERVER["PATH_INFO"])) {
@@ -209,7 +259,6 @@ class controller extends model
                     require_once("footer.php");
                     break;
 
-
                 case '/login':
                     require_once("index.php");
                     require_once("sub_header.php");
@@ -224,12 +273,25 @@ class controller extends model
                     require_once("footer.php");
                     break;
 
+                case '/changepassword':
+                    require_once("index.php");
+                    require_once("sub_header.php");
+                    require_once("changepassword.php");
+                    require_once("footer.php");
+                    break;
+
+                case '/deleteaccount':
+                    require_once("index.php");
+                    require_once("sub_header.php");
+                    require_once("deleteaccount.php");
+                    require_once("footer.php");
+                    break;
+
                 default:
                     require_once("404.php");
                     break;
             }
         }
-
     }
 }
 
