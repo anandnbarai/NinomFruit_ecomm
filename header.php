@@ -1,6 +1,36 @@
 <?php
 $mainurl = "http://localhost/php-data/my_work/TI/Ninom%20Fruit/";
 $baseurl = "http://localhost/php-data/my_work/TI/Ninom%20Fruit/assets/";
+
+session_start();
+
+// Set the inactivity time to 5 minutes (300 seconds)
+$inactivity_time = 60 * 5;
+if (isset($_SESSION['email'])) {
+    // Check if the last_timestamp session variable is set
+    if (isset($_SESSION['last_timestamp'])) {
+
+        // Get the current time
+        $current_time = time();
+
+        // Calculate the difference between the current time and the last activity time
+        $difference = $current_time - $_SESSION['last_timestamp'];
+
+        // If the user has been inactive for more than the set inactivity time, logout the user
+        if ($difference > $inactivity_time) {
+            session_unset();
+            session_destroy();
+            echo "<script>
+                alert('You are logged out successfully.')
+                window.location='./';
+            </script>";
+        }
+    }
+}
+
+// Update the last_timestamp session variable
+$_SESSION['last_timestamp'] = time();
+
 ?>
 
 <!DOCTYPE html>
@@ -117,6 +147,18 @@ $baseurl = "http://localhost/php-data/my_work/TI/Ninom%20Fruit/assets/";
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo $mainurl; ?>contact">Contact Us</a>
                                 </li>
+                                <?php
+                                if (isset($_SESSION['email'])) {
+                                    ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="<?php echo $mainurl; ?>cart"><i
+                                                class="bi bi-cart3"></i><sup>
+                                                <?php ?>
+                                            </sup>&nbsp;Cart</a>
+                                    </li>
+                                    <?php
+                                } 
+                                ?>
                             </ul>
                         </div>
                     </div>

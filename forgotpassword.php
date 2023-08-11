@@ -5,7 +5,7 @@
                 <div class="heading_container">
                     <hr>
                     <h2>
-                        Login Here!
+                        Forgot Password
                     </h2>
                 </div>
             </div>
@@ -17,22 +17,12 @@
                         <div class="contact_form-container">
                             <div>
                                 <div>
-                                    Email : <input type="email" placeholder="Email" name="email" />
+                                    Email : <input type="email" placeholder="Enter Your Email" name="email" />
                                 </div>
                                 <div>
-                                    Password : <input type="password" placeholder="Enter Your Password"
-                                        name="password" />
-                                </div>
-                                <div>
-                                    <button type="submit" class="text-dark" name="login">
-                                        Login
+                                    <button type="submit" class="text-dark" name="forgotpassword">
+                                        Forgot Password
                                     </button>
-                                </div>
-                                <div class="mt-2">
-                                    Forgot Password? <a href="<?php echo $mainurl; ?>forgotpassword">Click Here!</a>
-                                </div>
-                                <div class="mt-1">
-                                    Don't have an Account? <a href="<?php echo $mainurl; ?>register">Create One!</a>
                                 </div>
                             </div>
                         </div>

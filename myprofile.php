@@ -4,9 +4,10 @@
             <div class="heading_container">
                 <hr>
                 <h2>
-                    <i>
+                    <strong>
                         <?php echo ucfirst($_SESSION["name"]); ?>,
-                    </i> Welcome to Your Profile
+                    </strong>
+                    Welcome to Your Profile
                 </h2>
             </div>
         </div>
@@ -34,13 +35,18 @@
                                     <i class="bi bi-file-earmark-lock"></i> Change Password</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark"
-                                    href="<?php echo $mainurl; ?>deleteaccount"><i class="bi bi-person-fill-x"></i> Delete
+                                <a class="nav-link text-dark" href="<?php echo $mainurl; ?>forgotpassword">
+                                <i class="bi bi-lock"></i> Forgot Password</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="<?php echo $mainurl; ?>deleteaccount"><i
+                                        class="bi bi-person-fill-x"></i> Delete
                                     Account </a>
                             </li>
                             <div>
                                 <button type="submit" name="logout">
-                                    <a class="text-dark text-decoration-none" href="<?php echo $mainurl ?>?logout">Log Out</a>
+                                    <a class="text-dark text-decoration-none" href="<?php echo $mainurl ?>?logout">Log
+                                        Out</a>
                                 </button>
                             </div>
                         </ul>
@@ -50,16 +56,20 @@
                             <div class="contact_form-container">
                                 <div>
                                     <div>
-                                        Name : <input type="text" name="name" value="<?php echo $showdata[0]['name'] ?>" />
+                                        Name : <input type="text" name="name"
+                                            value="<?php echo $showdata[0]['name'] ?>" />
                                     </div>
                                     <div>
-                                        Email : <input type="email" name="email" value="<?php echo $showdata[0]['email'] ?>"/>
+                                        Email : <input type="email" name="email"
+                                            value="<?php echo $showdata[0]['email'] ?>" />
                                     </div>
                                     <div>
-                                        Phone Number : <input type="text" name="mobile" value="<?php echo $showdata[0]['mobile'] ?>"/>
+                                        Phone Number : <input type="text" name="mobile"
+                                            value="<?php echo $showdata[0]['mobile'] ?>" />
                                     </div>
                                     <div>
-                                        Address : <input type="text" class="message_input" name="address" value="<?php echo $showdata[0]['address'] ?>" />
+                                        Address : <input type="text" class="message_input" name="address"
+                                            value="<?php echo $showdata[0]['address'] ?>" />
                                     </div>
                                     <div>
                                         <button type="submit" class="text-dark" name="update">

@@ -17,7 +17,7 @@
                     <h5>
                         Orange
                     </h5>
-                    <a href="">
+                    <a href="<?php echo $mainurl; ?>cart">
                         Buy Now
                     </a>
                 </div>
@@ -28,7 +28,7 @@
                     <h5>
                         Blueberry
                     </h5>
-                    <a href="">
+                    <a href="<?php echo $mainurl; ?>cart">
                         Buy Now
                     </a>
                 </div>
@@ -39,7 +39,7 @@
                     <h5>
                         Banana
                     </h5>
-                    <a href="">
+                    <a href="<?php echo $mainurl; ?>cart">
                         Buy Now
                     </a>
                 </div>
@@ -50,7 +50,7 @@
                     <h5>
                         Apple
                     </h5>
-                    <a href="">
+                    <a href="<?php echo $mainurl; ?>cart">
                         Buy Now
                     </a>
                 </div>
@@ -61,7 +61,7 @@
                     <h5>
                         Mango
                     </h5>
-                    <a href="">
+                    <a href="<?php echo $mainurl; ?>cart">
                         Buy Now
                     </a>
                 </div>
@@ -72,7 +72,7 @@
                     <h5>
                         Strawberry
                     </h5>
-                    <a href="">
+                    <a href="<?php echo $mainurl; ?>cart">
                         Buy Now
                     </a>
                 </div>
