@@ -55,8 +55,44 @@ class admincontroller extends adminmodel
             }
         }
 
+        //! insert fruit details into batabase
+        if (isset($_POST['addfruit'])) {
+
+            $tmp_name = $_FILES["f_image"]["tmp_name"];
+            $path = "../uploads/" . $_FILES["f_image"]["name"];
+            move_uploaded_file($tmp_name, $path);
+
+            $f_name = $_POST["f_name"];
+            $f_desctiption = $_POST["f_description"];
+            $f_price = $_POST["f_price"];
+
+            $data = array(
+                "f_name" => $f_name,
+                "f_description" => $f_desctiption,
+                "f_price" => $f_price,
+                "f_image" => $path
+            );
+
+            $chk = $this->insertdata('fruit', $data);
+
+            if ($chk) {
+                echo "<script>
+                        alert('Fruit details uploaded successfully')
+                        window.location='managefruit';
+            </script>";
+            } else {
+                echo "<script>
+                        alert('Something went wrong, Please try again!')
+                        window.location='addfruit';
+            </script>";
+            }
+        }
+
         //!fetch data from about table
         $about = $this->selectalldata('about');
+
+        //!fetch data from fruit table
+        $fruit = $this->selectalldata('fruit');
 
         //! update customer profile data
         if (isset($_POST["updateabout"])) {
@@ -137,6 +173,21 @@ class admincontroller extends adminmodel
                     require_once("footer.php");
                     break;
 
+                case '/addfruit':
+                    require_once("index.php");
+                    require_once("header.php");
+                    require_once("sidebar.php");
+                    require_once("addfruit.php");
+                    require_once("footer.php");
+                    break;
+
+                case '/managefruit':
+                    require_once("index.php");
+                    require_once("header.php");
+                    require_once("sidebar.php");
+                    require_once("managefruit.php");
+                    require_once("footer.php");
+                    break;
                 case '/addabout':
                     require_once("index.php");
                     require_once("header.php");

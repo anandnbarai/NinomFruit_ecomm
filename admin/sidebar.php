@@ -17,12 +17,12 @@
             </a>
             <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
+                    <a href="<?php echo $mainurl; ?>addfruit">
                         <i class="bi bi-circle"></i><span>Add Fruit Details</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="<?php echo $mainurl; ?>managefruit">
                         <i class="bi bi-circle"></i><span>Manage Fruit Details</span>
                     </a>
                 </li>
