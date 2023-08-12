@@ -35,6 +35,22 @@ class model
         return $exe;
     }
 
+    //!Add cart details into database
+    public function addtocart($table, $data)
+    {
+        //* Convert Array into String
+        $column = array_keys($data);
+        $column1 = implode(",", $column);
+
+        $value = array_values($data);
+        $value1 = implode("','", $value);
+
+        $insert = "insert into $table($column1) values('$value1')";
+        $exe = mysqli_query($this->connection, $insert);
+        return $exe;
+    }
+
+
     //! function for login
     public function login($table, $email, $password)
     {
@@ -82,6 +98,22 @@ class model
 
     }
 
+    //! funtion for forgot password
+    public function forgotpassword($table, $column, $column1, $email)
+    {
+        $select = "select $column from $table where $column1='$email'";
+        $exe = mysqli_query($this->connection, $select);
+        $num_rows = mysqli_num_rows($exe);
+        $fetch = mysqli_fetch_array($exe);
+        // if($num_rows==1)
+        if ($num_rows > 0) {
+            $pass = base64_decode($fetch[$column]);
+            return $pass;
+        } else {
+            return false;
+        }
+    }
+
     //! function for account delete
     public function deleteaccount($table, $id)
     {
@@ -98,7 +130,7 @@ class model
 
     }
 
-    //! functiion for select data from database
+    //! function for select data from database
     public function selectalldata($table)
     {
         $select = "select * from $table";
@@ -107,6 +139,14 @@ class model
             $arr[] = $fetch;
         }
         return $arr;
+    }
+
+    //! function for Update user data
+    public function updateprofile($table, $column, $name, $email, $mobile, $address, $id)
+    {
+        $upd = "update $table set name='$name',email='$email',mobile='$mobile',address='$address' where $column='$id'";
+        $exe = mysqli_query($this->connection, $upd);
+        return $exe;
     }
 
 }
