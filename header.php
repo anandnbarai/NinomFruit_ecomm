@@ -4,8 +4,9 @@ $baseurl = "http://localhost/php-data/my_work/TI/Ninom%20Fruit/assets/";
 
 session_start();
 
-// Set the inactivity time to 5 minutes (300 seconds)
-$inactivity_time = 60 * 5;
+//!auto logout on inactive
+// Set the inactivity time to 15 minutes (900 seconds)
+$inactivity_time = 60 * 15;
 if (isset($_SESSION['email'])) {
     // Check if the last_timestamp session variable is set
     if (isset($_SESSION['last_timestamp'])) {
@@ -21,7 +22,7 @@ if (isset($_SESSION['email'])) {
             session_unset();
             session_destroy();
             echo "<script>
-                alert('You are logged out successfully.')
+                alert('You are logged out successfully')
                 window.location='./';
             </script>";
         }
@@ -46,7 +47,6 @@ $_SESSION['last_timestamp'] = time();
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-
     <title>Ninom</title>
 
     <!-- slider stylesheet -->
@@ -157,7 +157,7 @@ $_SESSION['last_timestamp'] = time();
                                             </sup>&nbsp;Cart</a>
                                     </li>
                                     <?php
-                                } 
+                                }
                                 ?>
                             </ul>
                         </div>
@@ -209,15 +209,15 @@ $_SESSION['last_timestamp'] = time();
                         Fruit shop
                     </h2>
                     <p>
-                        There are many variations of passages of Lorem Ipsum available
+                        Best quality and nutritious fruits available
                     </p>
                 </div>
                 <div class="img-box">
                     <img src="<?php echo $baseurl; ?>images/shop-img.jpg" alt="">
                 </div>
                 <div class="btn-box">
-                    <a href="">
-                        Buy Now
+                    <a href="<?php echo $mainurl; ?>fruit">
+                        Visit Our Store
                     </a>
                 </div>
             </div>

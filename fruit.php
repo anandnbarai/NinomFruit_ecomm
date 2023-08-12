@@ -1,4 +1,3 @@
-
 <section class="fruit_section layout_padding">
     <div class="container">
         <div class="heading_container">
@@ -11,72 +10,33 @@
     <div class="container-fluid">
 
         <div class="fruit_container">
-            <div class="box">
-                <img src="<?php echo $baseurl; ?>images/f-1.jpg" alt="">
-                <div class="link_box">
-                    <h5>
-                        Orange
-                    </h5>
-                    <a href="<?php echo $mainurl; ?>cart">
-                        Buy Now
-                    </a>
+            <?php
+            foreach ($fruit as $row) {
+                ?>
+                <div class="box">
+                    <img src="uploads/<?php echo $row["f_image"]; ?>" alt="">
+                    <div class="link_box">
+                        <h5>
+                            <?php echo $row["f_name"]; ?>
+                        </h5>
+                        <h5>
+                            
+                            Price : &#8377;<?php echo $row["f_price"]; ?>/kg
+                        </h5>
+                        <a href="<?php echo $mainurl; ?>cart">
+                            Add to Cart
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="box">
-                <img src="<?php echo $baseurl; ?>images/f-2.jpg" alt="">
-                <div class="link_box">
-                    <h5>
-                        Blueberry
-                    </h5>
-                    <a href="<?php echo $mainurl; ?>cart">
-                        Buy Now
-                    </a>
-                </div>
-            </div>
-            <div class="box">
-                <img src="<?php echo $baseurl; ?>images/f-3.jpg" alt="">
-                <div class="link_box">
-                    <h5>
-                        Banana
-                    </h5>
-                    <a href="<?php echo $mainurl; ?>cart">
-                        Buy Now
-                    </a>
-                </div>
-            </div>
-            <div class="box">
-                <img src="<?php echo $baseurl; ?>images/f-4.jpg" alt="">
-                <div class="link_box">
-                    <h5>
-                        Apple
-                    </h5>
-                    <a href="<?php echo $mainurl; ?>cart">
-                        Buy Now
-                    </a>
-                </div>
-            </div>
-            <div class="box">
-                <img src="<?php echo $baseurl; ?>images/f-5.jpg" alt="">
-                <div class="link_box">
-                    <h5>
-                        Mango
-                    </h5>
-                    <a href="<?php echo $mainurl; ?>cart">
-                        Buy Now
-                    </a>
-                </div>
-            </div>
-            <div class="box">
-                <img src="<?php echo $baseurl; ?>images/f-6.jpg" alt="">
-                <div class="link_box">
-                    <h5>
-                        Strawberry
-                    </h5>
-                    <a href="<?php echo $mainurl; ?>cart">
-                        Buy Now
-                    </a>
-                </div>
-            </div>
+
+                <?php
+            }
+            ?>
         </div>
-    </div>
 </section>
+<!-- <script>
+    function login() {
+        alert('Login First to buy the Fruit')
+        window.location = 'login';
+    }
+</script> -->
